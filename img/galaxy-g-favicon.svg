@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Galaxy G favicon">
+  <defs>
+    <linearGradient id="galaxyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#8e44ad"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" fill="none"/>
+  <text
+    x="32"
+    y="47"
+    text-anchor="middle"
+    font-size="56"
+    font-family="Gugi, 'Segoe UI Black', 'Arial Black', sans-serif"
+    font-weight="700"
+    fill="url(#galaxyGradient)"
+  >G</text>
+</svg>
