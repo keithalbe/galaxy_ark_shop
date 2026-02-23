@@ -1,0 +1,371 @@
+[
+  {
+    "name": "Mantis",
+    "category": "dinosaur",
+    "level": 361,
+    "description": "Tool-wielding bug mercenary. Great for harvesting or slaughtering.",
+    "image": "./img/dossiers/mantis.png",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 69,
+      "Stamina": 57,
+      "Food": 55,
+      "Weight": 51,
+      "Melee": 63
+    }
+  },
+  {
+    "name": "Beelzebufo",
+    "category": "dinosaur",
+    "level": 331,
+    "description": "Bug-slaughtering pogo frog. Farms insects for cementing paste, and delivers torpor with every lick.",
+    "image": "./img/dossiers/beelzebufo.png",
+    "warning": "Free Mod Required",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 68,
+      "Stamina": 71,
+      "Food": 71,
+      "Weight": 61,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Spino",
+    "category": "dinosaur",
+    "level": 345,
+    "description": "Semi-aquatic apex predator. Fast in water, hard-hitting on land, and great for river patrols.",
+    "image": "./img/dossiers/spino.png",
+    "warning": "Paid Mod Required",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 68,
+      "Stamina": 71,
+      "Food": 71,
+      "Weight": 61,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Equus | Unicorn",
+    "category": "dinosaur",
+    "level": 384,
+    "description": "Agile mount with strong stamina and utility. Great travel speed, solid carry power, and unmatched style on the open trail.",
+    "image": "./img/dossiers/equus.png",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 68,
+      "Stamina": 71,
+      "Food": 71,
+      "Weight": 61,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Karkinos",
+    "category": "dinosaur",
+    "level": 330,
+    "description": "Massive crab bruiser. Moves in all directions, with huge jumps and strong carry utility for taming and transport.",
+    "image": "./img/dossiers/karkinos.png",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 92,
+      "Stamina": 60,
+      "Food": 46,
+      "Weight": 52,
+      "Melee": 79
+    }
+  },
+  {
+    "name": "Baryonyx",
+    "category": "dinosaur",
+    "level": 330,
+    "description": "Versatile hunter with solid speed and control. Great in caves and rivers, with reliable combat performance.",
+    "image": "./img/dossiers/baryonyx.png",
+    "variants": [
+      "Base",
+      "Arkology",
+      "Scorched",
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 74,
+      "Stamina": 81,
+      "Food": 73,
+      "Weight": 71,
+      "Melee": 75
+    }
+  },
+  {
+    "name": "Argentavis",
+    "category": "dinosaur",
+    "level": 329,
+    "description": "Utility bird with reduced weight for metal, crystal, obsidian, and stone. Also regenerates stamina with every kill.",
+    "image": "./img/dossiers/argentavis.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 52,
+      "Stamina": 63,
+      "Food": 53,
+      "Weight": 59,
+      "Melee": 47
+    }
+  },
+  {
+    "name": "Ankylosaurus",
+    "category": "dinosaur",
+    "level": 349,
+    "description": "Metal-harvesting tank; has reduced metal weight and gathers flint efficiently from river rocks.",
+    "image": "./img/dossiers/ankylosaurus.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 64,
+      "Stamina": 60,
+      "Food": 58,
+      "Weight": 58,
+      "Melee": 54
+    }
+  },
+  {
+    "name": "Direwolf",
+    "category": "dinosaur",
+    "level": 373,
+    "description": "Pack-hunting tracker; harvests hide efficiently and excels at sniffing out Explorer Notes for bonus XP boosts.",
+    "image": "./img/dossiers/direwolf.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 68,
+      "Stamina": 61,
+      "Food": 56,
+      "Weight": 60,
+      "Melee": 59
+    }
+  },
+  {
+    "name": "Tusoteuthis",
+    "category": "dinosaur",
+    "level": 349,
+    "description": "Deep-sea kraken; grabs creatures (bypasses saddle damage reduction while grabbed), and passively generates oil while wandering underwater.",
+    "image": "./img/dossiers/tusoteuthis.png",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 73,
+      "Stamina": 74,
+      "Food": 76,
+      "Weight": 54,
+      "Melee": 60
+    }
+  },
+  {
+    "name": "Sarco",
+    "category": "dinosaur",
+    "level": 356,
+    "description": "Lightning-fast swimmer; zero oxygen stat needed, massive water stamina, and deadly river ambusher.",
+    "image": "./img/dossiers/sarco.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 75,
+      "Stamina": 71,
+      "Food": 75,
+      "Weight": 66,
+      "Melee": 68
+    }
+  },
+  {
+    "name": "Megatherium",
+    "category": "dinosaur",
+    "level": 356,
+    "description": "Bug-slaying powerhouse; gains massive insect damage buff, making Broodmother fights much easier.",
+    "image": "./img/dossiers/megatherium.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 51,
+      "Stamina": 58,
+      "Food": 56,
+      "Weight": 61,
+      "Melee": 64
+    }
+  },
+  {
+    "name": "Kaprosuchus",
+    "category": "dinosaur",
+    "level": 369,
+    "description": "Leaping ambusher; dismounts riders with surprise grabs and thrives in swamp hit-and-run chaos.",
+    "image": "./img/dossiers/kaprosuchus.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 79,
+      "Stamina": 69,
+      "Food": 73,
+      "Weight": 73,
+      "Melee": 74
+    }
+  },
+  {
+    "name": "Ichthyosaurus",
+    "category": "dinosaur",
+    "level": 346,
+    "description": "Leaping ambusher; dismounts riders with surprise grabs and thrives in swamp hit-and-run chaos.",
+    "image": "./img/dossiers/ichthyosaurus.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 60,
+      "Stamina": 64,
+      "Food": 76,
+      "Weight": 79,
+      "Melee": 66
+    }
+  },
+  {
+    "name": "Hyaenodon",
+    "category": "dinosaur",
+    "level": 338,
+    "description": "Walking meat storage; 8x meat spoil time, and 60% meat weight reduction.",
+    "image": "./img/dossiers/hyaenodon.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 48,
+      "Stamina": 60,
+      "Food": 55,
+      "Weight": 47,
+      "Melee": 74
+    }
+  },
+  {
+    "name": "Daeodon",
+    "category": "dinosaur",
+    "level": 378,
+    "description": "Mobile medic; enable passive healing (or use active while riding) which consumes food to heal nearby allies, invaluable for boss fights.",
+    "image": "./img/dossiers/daeodon.png",
+    "variants": [
+      "Base",
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 63,
+      "Stamina": 64,
+      "Food": 64,
+      "Weight": 78,
+      "Melee": 50
+    }
+  },
+  {
+    "name": "Arthropluera",
+    "category": "dinosaur",
+    "level": 514,
+    "description": "Cave acid tank; reflects melee damage, spits armor-melting acid, and fits where most mounts can't.",
+    "image": "./img/dossiers/arthropluera.png",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 98,
+      "Stamina": 106,
+      "Food": 119,
+      "Weight": 97,
+      "Melee": 93
+    }
+  }
+]
