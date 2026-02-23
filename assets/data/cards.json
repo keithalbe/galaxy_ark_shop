@@ -341,5 +341,168 @@
       "Weight": 97,
       "Melee": 93
     }
+  },
+  {
+    "name": "Megalosaurus",
+    "category": "dinosaur",
+    "level": 354,
+    "description": "",
+    "image": "./img/dossiers/megalosaurus.webp",
+    "variants": [
+      "Aberrant"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 58,
+      "Stamina": 55,
+      "Food": 56,
+      "Weight": 54,
+      "Melee": 74
+    }
+  },
+  {
+    "name": "Pachy",
+    "category": "dinosaur",
+    "level": 325,
+    "description": "",
+    "image": "./img/dossiers/pachy.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 57,
+      "Stamina": 51,
+      "Food": 53,
+      "Weight": 63,
+      "Melee": 44
+    }
+  },
+  {
+    "name": "Featherlight",
+    "category": "dinosaur",
+    "level": 325,
+    "description": "",
+    "image": "./img/dossiers/featherlight.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 61,
+      "Stamina": 51,
+      "Food": 57,
+      "Weight": 47,
+      "Melee": 51
+    }
+  },
+  {
+    "name": "Drakeling",
+    "category": "dinosaur",
+    "level": 325,
+    "description": "",
+    "image": "./img/dossiers/drakeling.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 52,
+      "Stamina": 53,
+      "Food": 57,
+      "Weight": 53,
+      "Melee": 53
+    }
+  },
+  {
+    "name": "Plesiosaur",
+    "category": "dinosaur",
+    "level": 335,
+    "description": "",
+    "image": "./img/dossiers/plesiosaur.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 70,
+      "Stamina": 67,
+      "Food": 64,
+      "Weight": 68,
+      "Melee": 65
+    }
+  },
+  {
+    "name": "Snow Owl",
+    "category": "dinosaur",
+    "level": 317,
+    "description": "",
+    "image": "./img/dossiers/snow_owl.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 59,
+      "Stamina": 48,
+      "Oxygen": 53,
+      "Food": 47,
+      "Weight": 49,
+      "Melee": 60
+    }
+  },
+  {
+    "name": "Quetzal",
+    "category": "dinosaur",
+    "level": 367,
+    "description": "",
+    "image": "./img/dossiers/quetzal.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 56,
+      "Stamina": 69,
+      "Oxygen": 57,
+      "Food": 64,
+      "Weight": 59,
+      "Melee": 61
+    }
+  },
+  {
+    "name": "Megalania",
+    "category": "dinosaur",
+    "level": 352,
+    "description": "",
+    "image": "./img/dossiers/megalania.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 52,
+      "Stamina": 56,
+      "Oxygen": 76,
+      "Food": 55,
+      "Weight": 54,
+      "Melee": 58
+    }
   }
 ]
