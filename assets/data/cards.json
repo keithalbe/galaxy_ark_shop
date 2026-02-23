@@ -7,9 +7,7 @@
     "image": "./img/dossiers/mantis.webp",
     "variants": [
       "Base",
-      "Arkology",
-      "Scorched",
-      "Aberrant"
+      "Arkology"
     ],
     "costs": {
       "Element": 350
@@ -28,11 +26,8 @@
     "level": 331,
     "description": "Bug-slaughtering pogo frog. Farms insects for cementing paste, and delivers torpor with every lick.",
     "image": "./img/dossiers/beelzebufo.webp",
-    "warning": "Free Mod Required",
     "variants": [
-      "Base",
       "Arkology",
-      "Scorched",
       "Aberrant"
     ],
     "costs": {
@@ -52,12 +47,8 @@
     "level": 345,
     "description": "Semi-aquatic apex predator. Fast in water, hard-hitting on land, and great for river patrols.",
     "image": "./img/dossiers/spino.webp",
-    "warning": "Paid Mod Required",
     "variants": [
-      "Base",
-      "Arkology",
-      "Scorched",
-      "Aberrant"
+      "Base"
     ],
     "costs": {
       "Element": 350
@@ -71,16 +62,13 @@
     }
   },
   {
-    "name": "Equus | Unicorn",
+    "name": "Unicorn",
     "category": "dinosaur",
     "level": 384,
     "description": "Agile mount with strong stamina and utility. Great travel speed, solid carry power, and unmatched style on the open trail.",
     "image": "./img/dossiers/equus.webp",
     "variants": [
-      "Base",
-      "Arkology",
-      "Scorched",
-      "Aberrant"
+      "Arkology"
     ],
     "costs": {
       "Element": 350
@@ -100,10 +88,7 @@
     "description": "Massive crab bruiser. Moves in all directions, with huge jumps and strong carry utility for taming and transport.",
     "image": "./img/dossiers/karkinos.webp",
     "variants": [
-      "Base",
-      "Arkology",
-      "Scorched",
-      "Aberrant"
+      "Base"
     ],
     "costs": {
       "Element": 350
@@ -123,13 +108,11 @@
     "description": "Versatile hunter with solid speed and control. Great in caves and rivers, with reliable combat performance.",
     "image": "./img/dossiers/baryonyx.webp",
     "variants": [
-      "Base",
       "Arkology",
-      "Scorched",
       "Aberrant"
     ],
     "costs": {
-      "Element": 350
+      "Element": 400
     },
     "stats": {
       "Health": 74,
@@ -146,7 +129,6 @@
     "description": "Utility bird with reduced weight for metal, crystal, obsidian, and stone. Also regenerates stamina with every kill.",
     "image": "./img/dossiers/argentavis.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -167,7 +149,6 @@
     "description": "Metal-harvesting tank; has reduced metal weight and gathers flint efficiently from river rocks.",
     "image": "./img/dossiers/ankylosaurus.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -188,7 +169,6 @@
     "description": "Pack-hunting tracker; harvests hide efficiently and excels at sniffing out Explorer Notes for bonus XP boosts.",
     "image": "./img/dossiers/direwolf.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -229,7 +209,6 @@
     "description": "Lightning-fast swimmer; zero oxygen stat needed, massive water stamina, and deadly river ambusher.",
     "image": "./img/dossiers/sarco.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -250,7 +229,6 @@
     "description": "Bug-slaying powerhouse; gains massive insect damage buff, making Broodmother fights much easier.",
     "image": "./img/dossiers/megatherium.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -271,7 +249,6 @@
     "description": "Leaping ambusher; dismounts riders with surprise grabs and thrives in swamp hit-and-run chaos.",
     "image": "./img/dossiers/kaprosuchus.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -292,7 +269,6 @@
     "description": "Leaping ambusher; dismounts riders with surprise grabs and thrives in swamp hit-and-run chaos.",
     "image": "./img/dossiers/ichthyosaurus.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -313,7 +289,6 @@
     "description": "Walking meat storage; 8x meat spoil time, and 60% meat weight reduction.",
     "image": "./img/dossiers/hyaenodon.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
@@ -334,7 +309,6 @@
     "description": "Mobile medic; enable passive healing (or use active while riding) which consumes food to heal nearby allies, invaluable for boss fights.",
     "image": "./img/dossiers/daeodon.webp",
     "variants": [
-      "Base",
       "Arkology"
     ],
     "costs": {
