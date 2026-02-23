@@ -45,3 +45,29 @@ python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+## Convert PNG Dossiers to WebP
+
+Use ImageMagick's `convert` command to reduce image size while preserving quality.
+
+### Single File Example
+
+```bash
+convert "img/dossiers/spino.png" -strip -resize "1200x1200>" -quality 80 "img/dossiers-webp/spino.webp"
+```
+
+### Batch Example
+
+```bash
+mkdir -p img/dossiers-webp
+for f in img/dossiers/*.png; do
+  b=$(basename "${f%.png}")
+  convert "$f" -strip -resize "1200x1200>" -quality 80 "img/dossiers-webp/$b.webp"
+done
+```
+
+### Notes
+
+- `-resize "1200x1200>"` keeps aspect ratio and only downsizes (no upscaling).
+- `-quality 80` is a good default for WebP size/quality balance.
+- `-strip` removes metadata for smaller files.
