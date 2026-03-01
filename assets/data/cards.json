@@ -225,7 +225,7 @@
   {
     "name": "Megatherium",
     "category": "dinosaur",
-    "level": 356,
+    "level": 351,
     "description": "Bug-slaying powerhouse; gains massive insect damage buff, making Broodmother fights much easier.",
     "image": "./img/dossiers/megatherium.webp",
     "variants": [
@@ -235,7 +235,7 @@
       "Element": 350
     },
     "stats": {
-      "Health": 51,
+      "Health": 53,
       "Stamina": 58,
       "Food": 56,
       "Weight": 61,
