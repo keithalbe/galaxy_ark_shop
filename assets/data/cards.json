@@ -23,7 +23,7 @@
   {
     "name": "Beelzebufo",
     "category": "dinosaur",
-    "level": 331,
+    "level": 405,
     "description": "Bug-slaughtering pogo frog. Farms insects for cementing paste, and delivers torpor with every lick.",
     "image": "./img/dossiers/beelzebufo.webp",
     "variants": [
@@ -34,11 +34,11 @@
       "Element": 350
     },
     "stats": {
-      "Health": 68,
-      "Stamina": 71,
-      "Food": 71,
-      "Weight": 61,
-      "Melee": 69
+      "Health": 85,
+      "Stamina": 89,
+      "Food": 69,
+      "Weight": 83,
+      "Melee": 78
     }
   },
   {
@@ -104,7 +104,7 @@
   {
     "name": "Baryonyx",
     "category": "dinosaur",
-    "level": 330,
+    "level": 393,
     "description": "Versatile hunter with solid speed and control. Great in caves and rivers, with reliable combat performance.",
     "image": "./img/dossiers/baryonyx.webp",
     "variants": [
@@ -116,16 +116,16 @@
     },
     "stats": {
       "Health": 74,
-      "Stamina": 81,
-      "Food": 73,
-      "Weight": 71,
-      "Melee": 75
+      "Stamina": 86,
+      "Food": 80,
+      "Weight": 73,
+      "Melee": 79
     }
   },
   {
     "name": "Argentavis",
     "category": "dinosaur",
-    "level": 329,
+    "level": 432,
     "description": "Utility bird with reduced weight for metal, crystal, obsidian, and stone. Also regenerates stamina with every kill.",
     "image": "./img/dossiers/argentavis.webp",
     "variants": [
@@ -135,17 +135,17 @@
       "Element": 350
     },
     "stats": {
-      "Health": 52,
+      "Health": 74,
       "Stamina": 63,
-      "Food": 53,
-      "Weight": 59,
-      "Melee": 47
+      "Food": 72,
+      "Weight": 63,
+      "Melee": 97
     }
   },
   {
     "name": "Ankylosaurus",
     "category": "dinosaur",
-    "level": 349,
+    "level": 362,
     "description": "Metal-harvesting tank; has reduced metal weight and gathers flint efficiently from river rocks.",
     "image": "./img/dossiers/ankylosaurus.webp",
     "variants": [
@@ -159,7 +159,7 @@
       "Stamina": 60,
       "Food": 58,
       "Weight": 58,
-      "Melee": 54
+      "Melee": 66
     }
   },
   {
@@ -503,6 +503,206 @@
       "Food": 55,
       "Weight": 54,
       "Melee": 58
+    }
+  },
+  {
+    "name": "Ammonite",
+    "category": "dinosaur",
+    "level": 358,
+    "description": "Living rage grenade; when provoked its pheromones turn every nearby creature hostile, useful for XP farming and harvesting rare buff-granting bile.",
+    "image": "./img/dossiers/ammonite.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 73,
+      "Stamina": 74,
+      "Food": 71,
+      "Weight": 70,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Anglerfish",
+    "category": "dinosaur",
+    "level": 374,
+    "description": "Deep-sea spotlight and pearl diver; its bioluminescent lure illuminates underwater caves and harvests silica pearls with remarkable efficiency.",
+    "image": "./img/dossiers/anglerfish.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 78,
+      "Stamina": 63,
+      "Food": 81,
+      "Weight": 82,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Archaeopteryx",
+    "category": "dinosaur",
+    "level": 313,
+    "description": "Living parachute with a chitin bonus; grab one mid-fall to glide safely to the ground, and it harvests insect chitin efficiently when you need it.",
+    "image": "./img/dossiers/archaeopteryx.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 59,
+      "Stamina": 45,
+      "Food": 57,
+      "Weight": 53,
+      "Melee": 51
+    }
+  },
+  {
+    "name": "Archelon",
+    "category": "dinosaur",
+    "level": 379,
+    "description": "Armored ocean platform with enormous health and stamina; its saddle hosts a deployable tent, making it a mobile underwater base or a near-unkillable sea escort.",
+    "image": "./img/dossiers/archelon.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 77,
+      "Stamina": 100,
+      "Food": 66,
+      "Weight": 69,
+      "Melee": 66
+    }
+  },
+  {
+    "name": "Basilosaurus",
+    "category": "dinosaur",
+    "level": 362,
+    "description": "Electric-proof ocean cruiser; its passive aura neutralizes jellyfish stings and eel shocks while generating oil on the move — the definitive deep-sea mount.",
+    "image": "./img/dossiers/basilosaurus.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 74,
+      "Stamina": 81,
+      "Food": 69,
+      "Weight": 68,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Bison",
+    "category": "dinosaur",
+    "level": 382,
+    "description": "Prairie-bred draft animal with a wagon hitch; hauls heavy cargo across open terrain and produces high-quality fertilizer to keep your crops fed.",
+    "image": "./img/dossiers/bison.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 70,
+      "Stamina": 73,
+      "Food": 57,
+      "Weight": 52,
+      "Melee": 69
+    }
+  },
+  {
+    "name": "Brachiosaurus",
+    "category": "dinosaur",
+    "level": 346,
+    "description": "Tallest tree-toppler on the Ark; its sheer bulk knocks down trees for massive wood yields and its platform saddle hosts a small mobile base above the treeline.",
+    "image": "./img/dossiers/brachiosaurus.webp",
+    "variants": [
+      "Base"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 60,
+      "Stamina": 52,
+      "Food": 65,
+      "Weight": 58,
+      "Melee": 57
+    }
+  },
+  {
+    "name": "Brontosaurus",
+    "category": "dinosaur",
+    "level": 400,
+    "description": "Walking berry farm with a platform saddle; harvests berries by the thousands per swing and can host a fully operational mobile base on its back.",
+    "image": "./img/dossiers/brontosaurus.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 67,
+      "Stamina": 67,
+      "Food": 67,
+      "Weight": 54,
+      "Melee": 72
+    }
+  },
+  {
+    "name": "Carnotaurus",
+    "category": "dinosaur",
+    "level": 375,
+    "description": "Charging gap-closer with natural horn-fueled burst damage; its ram attack disrupts groups and its natural speed makes it excellent for hit-and-run raids.",
+    "image": "./img/dossiers/carnotaurus.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 63,
+      "Stamina": 50,
+      "Food": 74,
+      "Weight": 58,
+      "Melee": 68
+    }
+  },
+  {
+    "name": "Castoroides",
+    "category": "dinosaur",
+    "level": 379,
+    "description": "Giant beaver and cement factory; chews through wood at absurd efficiency and its dam passively generates cementing paste while you sleep.",
+    "image": "./img/dossiers/castoroides.webp",
+    "variants": [
+      "Arkology"
+    ],
+    "costs": {
+      "Element": 350
+    },
+    "stats": {
+      "Health": 60,
+      "Stamina": 61,
+      "Food": 69,
+      "Weight": 65,
+      "Melee": 62
     }
   }
 ]

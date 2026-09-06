@@ -13,9 +13,17 @@ const STAT_INFO = {
 
 const CURRENCY_INFO = {
     Element: { rate: 1, icon: './img/currency/element.png' },
-    Polymer: { rate: 10, icon: './img/currency/polymer.png' },
-    'Metal Ingot': { rate: 20, icon: './img/currency/metal_ingot.png' }
+    Polymer: { rate: 20, icon: './img/currency/polymer.png' },
+    'Metal Ingot': { rate: 30, icon: './img/currency/metal_ingot.png' }
 };
+
+const CART_KEY = 'galaxy_cart_v1';
+
+// Discord webhook that receives orders when the buyer clicks "Buy Now".
+// NOTE: this URL is embedded in the page and is visible to anyone who views
+// the site source, so treat it as public. Leave it empty to disable sending —
+// the button then falls back to copying the order to the clipboard.
+const DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1546295798923268178/Ntj-x-jnw64wUjhJEzbBPhZDcY4Cbk_f6UxdJPX9CfqUDwGn_zxp_wV-rJ9ka3MpMtDp';
 
 const VARIANT_INFO = {
     Base: { color: '#8e44ad' },
@@ -121,6 +129,8 @@ function renderCards(list) {
                         </div>
                     </div>
                 </div>
+
+                <button class="add-cart-btn" type="button" data-name="${card.name}">Add to Cart</button>
             </div>
         </article>
     `).join('');
@@ -208,12 +218,294 @@ async function loadCards() {
     }));
 }
 
+/* ---------------------------------------------------------------------------
+ * Shopping cart
+ * -------------------------------------------------------------------------*/
+
+let cart = loadCart();
+
+function loadCart() {
+    try {
+        const stored = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(stored) ? stored : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveCart() {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function findCard(name) {
+    return cards.find(card => card.name === name);
+}
+
+function formatAmount(value) {
+    return Number.isInteger(value) ? String(value) : value.toFixed(2);
+}
+
+// Price of a single unit paid in the given currency (Element amount * rate).
+function perUnitCost(card, currency) {
+    const cInfo = getCurrencyInfo(currency);
+    const rate = cInfo && typeof cInfo.rate === 'number' ? cInfo.rate : 0;
+    const element = card && card.costs && card.costs.Element ? Number(card.costs.Element) : 0;
+    return element * rate;
+}
+
+// Every complete pair of 2 gets 10% off (matches the card "Pair (10% off)"
+// price); any leftover single is charged at full price.
+function lineTotal(card, currency, qty) {
+    const unit = perUnitCost(card, currency);
+    const pairs = Math.floor(qty / 2);
+    const singles = qty % 2;
+    return pairs * (unit * 2 * 0.9) + singles * unit;
+}
+
+function cartCount() {
+    return cart.reduce((sum, line) => sum + line.qty, 0);
+}
+
+// Sum per currency, since currency is chosen per line item.
+function cartTotals() {
+    const totals = {};
+    cart.forEach(line => {
+        const card = findCard(line.name);
+        if (!card) return;
+        totals[line.currency] = (totals[line.currency] || 0) + lineTotal(card, line.currency, line.qty);
+    });
+    return totals;
+}
+
+function addToCart(name) {
+    const line = cart.find(l => l.name === name);
+    if (line) {
+        line.qty += 1;
+    } else {
+        cart.push({ name, currency: 'Element', qty: 1 });
+    }
+    saveCart();
+    renderCart();
+    openCart();
+}
+
+function setQty(name, qty) {
+    const line = cart.find(l => l.name === name);
+    if (!line) return;
+    if (qty < 1) {
+        removeFromCart(name);
+        return;
+    }
+    line.qty = qty;
+    saveCart();
+    renderCart();
+}
+
+function setCurrency(name, currency) {
+    const line = cart.find(l => l.name === name);
+    if (!line || !CURRENCY_INFO[currency]) return;
+    line.currency = currency;
+    saveCart();
+    renderCart();
+}
+
+function removeFromCart(name) {
+    cart = cart.filter(line => line.name !== name);
+    saveCart();
+    renderCart();
+}
+
+function openCart() {
+    document.getElementById('cartDrawer').classList.add('open');
+    document.getElementById('cartBackdrop').classList.add('open');
+    document.getElementById('cartDrawer').setAttribute('aria-hidden', 'false');
+}
+
+function closeCart() {
+    document.getElementById('cartDrawer').classList.remove('open');
+    document.getElementById('cartBackdrop').classList.remove('open');
+    document.getElementById('cartDrawer').setAttribute('aria-hidden', 'true');
+}
+
+function currencyIcon(currency) {
+    const cInfo = getCurrencyInfo(currency);
+    return cInfo && cInfo.icon
+        ? `<img src="${cInfo.icon}" alt="${currency} icon">`
+        : '';
+}
+
+function renderCart() {
+    // Drop any lines whose card no longer exists in the data.
+    cart = cart.filter(line => findCard(line.name));
+    saveCart();
+
+    const badge = document.getElementById('cartCount');
+    if (badge) {
+        const count = cartCount();
+        badge.textContent = count;
+        badge.classList.toggle('empty', count === 0);
+    }
+
+    const body = document.getElementById('cartBody');
+    const foot = document.getElementById('cartFoot');
+    if (!body || !foot) return;
+
+    if (cart.length === 0) {
+        body.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+        foot.innerHTML = '';
+        return;
+    }
+
+    body.innerHTML = cart.map(line => {
+        const card = findCard(line.name);
+        const total = lineTotal(card, line.currency, line.qty);
+        const currencyBtns = Object.keys(CURRENCY_INFO).map(currency => `
+            <button class="cur-btn ${currency === line.currency ? 'active' : ''}" type="button"
+                    data-act="cur" data-name="${line.name}" data-cur="${currency}" title="${currency}">
+                ${currencyIcon(currency)}
+            </button>`).join('');
+
+        return `
+            <div class="cart-line">
+                <img class="cart-thumb" src="${card.image}" alt="${card.name}">
+                <div class="cart-line-main">
+                    <div class="cart-line-name">${card.name}</div>
+                    <div class="cart-cur">${currencyBtns}</div>
+                    <div class="cart-line-row">
+                        <div class="cart-qty">
+                            <button type="button" data-act="dec" data-name="${line.name}" aria-label="Decrease quantity">&minus;</button>
+                            <span>${line.qty}</span>
+                            <button type="button" data-act="inc" data-name="${line.name}" aria-label="Increase quantity">+</button>
+                        </div>
+                        <div class="cart-line-total">${currencyIcon(line.currency)}<span>${formatAmount(total)}</span></div>
+                    </div>
+                </div>
+                <button class="cart-remove" type="button" data-act="remove" data-name="${line.name}" aria-label="Remove ${card.name}">&times;</button>
+            </div>`;
+    }).join('');
+
+    const totals = cartTotals();
+    const totalsHtml = Object.entries(totals).map(([currency, value]) => `
+        <div class="cart-total-pill">${currencyIcon(currency)}<span>${formatAmount(value)}</span></div>`).join('');
+
+    foot.innerHTML = `
+        <div class="cart-totals">
+            <span class="cart-totals-label">Total</span>
+            <div class="cart-totals-pills">${totalsHtml}</div>
+        </div>
+        <button class="cart-buy" type="button" id="cartBuy">Buy Now</button>`;
+
+    document.getElementById('cartBuy').addEventListener('click', sendOrder);
+}
+
+function orderToText() {
+    const rows = cart.map(line => {
+        const card = findCard(line.name);
+        const total = lineTotal(card, line.currency, line.qty);
+        return `• ${line.qty}× ${card.name} — ${formatAmount(total)} ${line.currency}`;
+    });
+    const totals = Object.entries(cartTotals())
+        .map(([currency, value]) => `${formatAmount(value)} ${currency}`)
+        .join('   |   ');
+    return `**New GALAXY order**\n${rows.join('\n')}\n\n**Total:** ${totals}`;
+}
+
+async function sendOrder() {
+    if (cart.length === 0) return;
+    const text = orderToText();
+
+    if (!DISCORD_WEBHOOK_URL) {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert('Order copied to your clipboard — send it to us to complete your purchase.\n\n(No Discord webhook is configured yet.)');
+        } catch (error) {
+            alert('Order summary:\n\n' + text);
+        }
+        return;
+    }
+
+    const buyBtn = document.getElementById('cartBuy');
+    if (buyBtn) {
+        buyBtn.disabled = true;
+        buyBtn.textContent = 'Sending…';
+    }
+
+    try {
+        const response = await fetch(DISCORD_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content: text })
+        });
+        if (!response.ok) throw new Error(`Webhook responded ${response.status}`);
+        cart = [];
+        saveCart();
+        renderCart();
+        closeCart();
+        alert('Order sent! We\'ll reach out on Discord to arrange the trade.');
+    } catch (error) {
+        console.error('Order send failed:', error);
+        if (buyBtn) {
+            buyBtn.disabled = false;
+            buyBtn.textContent = 'Buy Now';
+        }
+        alert('Sorry, we could not send your order. Please try again or contact us directly.');
+    }
+}
+
+function setupCart() {
+    // Inject the drawer + backdrop once.
+    const wrap = document.createElement('div');
+    wrap.innerHTML = `
+        <div class="cart-backdrop" id="cartBackdrop"></div>
+        <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+            <div class="cart-head">
+                <h2>Your Cart</h2>
+                <button class="cart-close" type="button" id="cartClose" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="cart-body" id="cartBody"></div>
+            <div class="cart-foot" id="cartFoot"></div>
+        </aside>`;
+    while (wrap.firstElementChild) {
+        document.body.appendChild(wrap.firstElementChild);
+    }
+
+    document.getElementById('cartToggle').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    document.getElementById('cartBackdrop').addEventListener('click', closeCart);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeCart();
+    });
+
+    // Add-to-cart (delegated — cards are re-rendered on search/filter).
+    document.getElementById('cardsContainer').addEventListener('click', event => {
+        const btn = event.target.closest('.add-cart-btn');
+        if (btn) addToCart(btn.dataset.name);
+    });
+
+    // Cart line controls (delegated).
+    document.getElementById('cartBody').addEventListener('click', event => {
+        const btn = event.target.closest('[data-act]');
+        if (!btn) return;
+        const name = btn.dataset.name;
+        const line = cart.find(l => l.name === name);
+        switch (btn.dataset.act) {
+            case 'inc': setQty(name, (line ? line.qty : 0) + 1); break;
+            case 'dec': setQty(name, (line ? line.qty : 0) - 1); break;
+            case 'remove': removeFromCart(name); break;
+            case 'cur': setCurrency(name, btn.dataset.cur); break;
+        }
+    });
+
+    renderCart();
+}
+
 async function init() {
     try {
         cards = await loadCards();
         setupSearchAndFilters();
         setupStarfield();
         renderCards();
+        setupCart();
     } catch (error) {
         console.error('Initialization error:', error);
     }

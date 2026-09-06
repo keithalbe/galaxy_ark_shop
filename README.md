@@ -23,7 +23,7 @@ Static storefront for ARK items, designed to run directly on GitHub Pages.
 
 ## Editing Content
 
-- Add or update cards in `assets/data/cards.json`.
+- Add or update cards/dinos in `assets/data/cards.json`.
 - Update styling in `assets/css/styles.css`.
 - Update behavior in `assets/js/main.js`.
 - Keep image paths relative (for example: `./img/dossiers/mantis.png`) to stay GitHub Pages-compatible.
